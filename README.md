@@ -1,7 +1,16 @@
 # chiatri.bottom
 nhantri.top's evil twin brother, chiatri.bottom
 
-Console command for decryption
+</h3>Default command string (just copy and paste this into the console)</h3>
+const section1 = document.getElementById('videoSection');
+const section2 = document.getElementById('selectionSection');
+if (section1 && section2) {
+  section1.classList.remove('active');
+  section2.classList.add('active');
+}
+['contextmenu','keydown','selectstart','copy'].forEach(ev => {
+  document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
+});
 const all = {};
 for (const type of Object.keys(encryptedQuestionBank)) {
   all[type] = {};
@@ -11,12 +20,24 @@ for (const type of Object.keys(encryptedQuestionBank)) {
 }
 console.log(all);
 
-Enable shortcuts
+<br></br>
+<h2>Detailed commands</h2>
+</h3>Decrpting answers</h3>
+const all = {};
+for (const type of Object.keys(encryptedQuestionBank)) {
+  all[type] = {};
+  for (const diff of Object.keys(encryptedQuestionBank[type])) {
+    all[type][diff] = getQuestions(type, diff);
+  }
+}
+console.log(all);
+
+</h3>Enable shortcuts</h3>
 ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
   document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
 });
 
-Full 100% For assignment command - Full điểm (Lưu ý: Không cho điểm phần chi tiết)
+</h3>Full 100% For assignment command (Broken, don't use this.)</h3>
 state.stats.total = state.stats.correct = 30
 
 <h3>Skip video</h3>
