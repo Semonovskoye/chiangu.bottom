@@ -21,7 +21,7 @@ console.log(all);
 
 <br></br>
 <h2>Detailed commands</h2>
-</h3>Decrpting answers</h3>
+<h3>Decrpting answers</h3>
 const all = {};
 for (const type of Object.keys(encryptedQuestionBank)) {
   all[type] = {};
@@ -31,21 +31,17 @@ for (const type of Object.keys(encryptedQuestionBank)) {
 }
 console.log(all);
 
-</h3>Enable shortcuts</h3>
+<h3>Enable shortcuts</h3>
 ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
   document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
 });
 
-</h3>Full 100% For assignment command (Broken, don't use this.)</h3>
+<h3>Full 100% For assignment command (Broken, don't use this.)</h3>
 state.stats.total = state.stats.correct = 30
 
 <h3>Skip video</h3>
-// Section 1 (đang active)
 const section1 = document.getElementById('videoSection');
-
-// Section 2 (muốn chuyển sang)
 const section2 = document.getElementById('selectionSection');
-
 if (section1 && section2) {
   section1.classList.remove('active');
   section2.classList.add('active');
