@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGÂN HÀNG CÂU HỎI</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="./NGÂN HÀNG CÂU HỎI_files/loccauhoi.css">
+    <link rel="stylesheet" href="./NGÂN HÀNG CÂU HỎI_files/katex.min.css">
+    <script src="./NGÂN HÀNG CÂU HỎI_files/katex.min.js"></script>
+    <script src="./NGÂN HÀNG CÂU HỎI_files/auto-render.min.js"></script>
+    <script>
+        // Hàm render LaTeX
+        function renderMath(element) {
+            renderMathInElement(element, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ],
+                throwOnError: false
+            });
+        }
+
+        // Theo dõi thay đổi DOM
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType === 1) {
+                        renderMath(node);
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+
+            // Render lần đầu
+            renderMath(document.body);
+        });
+    </script>
+</head>
+
+<body>
+    
+
+    <!-- Nội dung trang chính -->
+   
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 20px;">NGÂN HÀNG CÂU HỎI</h1>
+        <div style="text-align: justify">
+            <b>Nhận biết</b> <br>
+            NT1: Nhận biết, kể tên, phát biểu, nêu được các đối tượng, khái niệm, quy luật, quá trình sống.<br>
+            NT2: Trình bày được các đặc điểm, vai trò của các đối tượng và các quá trình sống bằng các hình thức biểu đạt như nôn ngữ nói, viết, công thức, sơ đồ, biểu đồ.
+        </div>
+        <div style="text-align: justify">
+            <b>Thông hiểu</b><br>
+            NT3: Phân loại được các đối tượng, hiện tượng sống theo các tiêu chí khác nhau.<br>
+            NT4: Phân tích được các đặc điểm của một đối tượng, sự vật, quá trình theo logic nhất định.<br>
+            NT5: So sánh, lựa chọn được các đối tượng, khái niệm, các cơ chế, quá trình sống dựa theo các tiêu chí nhất định.<br>
+            NT6: Giải thích được mối quan hệ giữa các sự vật và hiện tượng (nguyên nhân – kết quả, cấu tạo – chức năng, …)<br>
+            TH1: Đề xuất vấn đề liên quan đến thế giới sống: đặc ra được các câu hỏi liên quan đến vấn đề; phân tích được bối cảnh để đề xuất vấn đề; dùng ngôn ngữ của mình biểu đạt được vấn đề đã đề xuất.<br>
+            TH2: Đưa ra phán đoán và xây dựng giả thuyết: phân tích được vấn đề để nêu được phán đoán; xây dựng và phát biểu được giả thuyết nghiên cứu.<br>
+            TH3: Lập kế hoạc thực hiện: xây dựng được khung logic nội dung tìm hiểu; lựa chọn được phương pháp thích hợp (quan sát, thực nghiệm, điều tra, phỏng vấn, hồi cứu tư liệu…); lập được kế hoạch triển khai hoạt động nghiên cứu [gọi chung là thiết kế nghiên cứu.<br>
+            VD1: Giải thích thực tiễn: giải thích, đánh giá được những hiện tượng thường gặp trong tự nhiên hoặc trong đời sống, tác động của chúng đến phát triển bền vững: giải thích, đánh giá, phản  biện được một số mô hình công nghệ ở mức độ phù hợp.
+
+        </div>
+        <div style="text-align: justify">
+            <b>Vận dụng</b><br>
+            NT7: Nhận ra và chỉnh sửa được những điểm sai; đưa ra được những nhận định có tính phê phán (phản biện) liên quan tới chủ đề trong thảo luận.<br>
+            NT8: Tìm được từ khóa, sử dụng được thuật ngữ khoa học, kết nối được thông tin theo logic có ý nghĩa, lập được dàn ý khi đọc và trình bày các văn bản khoa học; sử dụng được các hình thức ngôn ngữ biểu đạt khác nhau.<br>
+            TH4: Thực hiện kế hoạch [vd: Thực hiện nghiên cứu]: thu thập, lưu trữ được dữ liệu từ kết quả tổng quan, thực nghiệm, điều tra; đánh giá được kết quả dựa trên phân tích, xử lý các dữ liệu bằng các tham số thống kê đơn giản; so sánh được kết quả với giả thuyết, rút ra kết luận và điều chỉnh (nếu cần); đề xuất được ý kiến khuyến nghị vận dụng kết quả nghiên cứu, hoặc vấn đề nghiên cứu tiếp.<br>
+            TH5: Viết, trình bày báo cáo và thảo luận: sử dụng được ngôn ngữ, hình vẽ, sơ đồ, biểu bảng để biểu đạt quá trình và kết quả nghiên cứu; viết được báo cáo nghiên cứu; hợp tác được với đối tác bằng thái độ lắng nghe tích cực và tôn trọng quan điểm, ý kiến đánh giá do người khác đưa ra để tiếp thu tích cực và giải trình, phản biện, bảo vệ kết quả nghiên cứu một cách thuyết phục.<br>
+            VD2: Có hành vi, thái độ thích hợp: đề xuất, thực hiện một số giải pháp để bảo vệ sức khỏe bản thân, gia đình và cộng đồng; bảo vệ thiên nhiên, môi trường, thích ứng với biến đổi khí hậu, đáp ứng yêu cầu phát triển bền vững.
+
+
+        </div>
+
+        <div class="controls">
+            <div class="question-type">
+                <h6>MC - 18 câu (25%NB; 5%TH; 15%VD)</h6>
+
+                <div class="level-input">
+                    <input type="number" id="mcKQTDCCHNL-l1" min="0" max="400" value="0">-<input type="number" id="mcKQTDCCHNL-l2" min="0" max="400" value="0">-<input type="number" id="mcKQTDCCHNL-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="mcTDNVK-l1" min="0" max="400" value="0">-<input type="number" id="mcTDNVK-l2" min="0" max="400" value="0">-<input type="number" id="mcTDNVK-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcQHOTV-l1" min="0" max="400" value="0">-<input type="number" id="mcQHOTV-l2" min="0" max="400" value="0">-<input type="number" id="mcQHOTV-l3" min="0" max="400" value="0">
+                </div>
+
+                <div class="level-input">
+
+                    <input type="number" id="mcHHOTV-l1" min="0" max="400" value="0">-<input type="number" id="mcHHOTV-l2" min="0" max="400" value="0">-<input type="number" id="mcHHOTV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcDDVTHDV-l1" min="0" max="400" value="0">-<input type="number" id="mcDDVTHDV-l2" min="0" max="400" value="0">-<input type="number" id="mcDDVTHDV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcHHODV-l1" min="0" max="400" value="0">-<input type="number" id="mcHHODV-l2" min="0" max="400" value="0">-<input type="number" id="mcHHODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcTHODV-l1" min="0" max="400" value="0">-<input type="number" id="mcTHODV-l2" min="0" max="400" value="0">-<input type="number" id="mcTHODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcMDONDV-l1" min="0" max="400" value="0">-<input type="number" id="mcMDONDV-l2" min="0" max="400" value="0">-<input type="number" id="mcMDONDV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcBTVCBNM-l1" min="0" max="400" value="0">-<input type="number" id="mcBTVCBNM-l2" min="0" max="400" value="0">-<input type="number" id="mcBTVCBNM-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcKQCUOSV-l1" min="0" max="400" value="0">-<input type="number" id="mcKQCUOSV-l2" min="0" max="400" value="0">-<input type="number" id="mcKQCUOSV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcCUOTV-l1" min="0" max="400" value="0">-<input type="number" id="mcCUOTV-l2" min="0" max="400" value="0">-<input type="number" id="mcCUOTV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcCUODV-l1" min="0" max="400" value="0">-<input type="number" id="mcCUODV-l2" min="0" max="400" value="0">-<input type="number" id="mcCUODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcKQSTVPT-l1" min="0" max="400" value="0">-<input type="number" id="mcKQSTVPT-l2" min="0" max="400" value="0">-<input type="number" id="mcKQSTVPT-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcSTPTOTV-l1" min="0" max="400" value="0">-<input type="number" id="mcSTPTOTV-l2" min="0" max="400" value="0">-<input type="number" id="mcSTPTOTV-l3" min="0" max="400" value="0">
+                </div>
+
+                <div class="level-input">
+
+                    <input type="number" id="mcSTPTDV-l1" min="0" max="400" value="0">-<input type="number" id="mcSTPTDV-l2" min="0" max="400" value="0">-<input type="number" id="mcSTPTDV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcKQSSSV-l1" min="0" max="400" value="0">-<input type="number" id="mcKQSSSV-l2" min="0" max="400" value="0">-<input type="number" id="mcKQSSSV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcSSOTV-l1" min="0" max="400" value="0">-<input type="number" id="mcSSOTV-l2" min="0" max="400" value="0">-<input type="number" id="mcSSOTV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcSSODV-l1" min="0" max="400" value="0">-<input type="number" id="mcSSODV-l2" min="0" max="400" value="0">-<input type="number" id="mcSSODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="mcMQHCQT-l1" min="0" max="400" value="0">-<input type="number" id="mcMQHCQT-l2" min="0" max="400" value="0">-<input type="number" id="mcMQHCQT-l3" min="0" max="400" value="0">
+                </div>
+            </div>
+
+
+            <div class="question-type">
+                <h6>TF - 4 câu (10%NB; 20%TH; 10%VD)</h6>
+
+                <div class="level-input">
+
+                    <input type="number" id="tfKQTDCCHNL-l1" min="0" max="400" value="0">-<input type="number" id="tfKQTDCCHNL-l2" min="0" max="400" value="0">-<input type="number" id="tfKQTDCCHNL-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+
+                    <input type="number" id="tfTDNVK-l1" min="0" max="400" value="0">-<input type="number" id="tfTDNVK-l2" min="0" max="400" value="0">-<input type="number" id="tfTDNVK-l3" min="0" max="400" value="0">
+                </div>
+
+                <div class="level-input">
+                    <input type="number" id="tfQHOTV-l1" min="0" max="400" value="0">-<input type="number" id="tfQHOTV-l2" min="0" max="400" value="0">-<input type="number" id="tfQHOTV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfHHOTV-l1" min="0" max="400" value="0">-<input type="number" id="tfHHOTV-l2" min="0" max="400" value="0">-<input type="number" id="tfHHOTV-l3" min="0" max="400" value="0">
+                </div>
+
+                <div class="level-input">
+                    <input type="number" id="tfDDVTHDV-l1" min="0" max="400" value="0">-<input type="number" id="tfDDVTHDV-l2" min="0" max="400" value="0">-<input type="number" id="tfDDVTHDV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfHHODV-l1" min="0" max="400" value="0">-<input type="number" id="tfHHODV-l2" min="0" max="400" value="0">-<input type="number" id="tfHHODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfTHODV-l1" min="0" max="400" value="0">-<input type="number" id="tfTHODV-l2" min="0" max="400" value="0">-<input type="number" id="tfTHODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfMDONDV-l1" min="0" max="400" value="0">-<input type="number" id="tfMDONDV-l2" min="0" max="400" value="0">-<input type="number" id="tfMDONDV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfBTVCBNM-l1" min="0" max="400" value="0">-<input type="number" id="tfBTVCBNM-l2" min="0" max="400" value="0">-<input type="number" id="tfBTVCBNM-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfKQCUOSV-l1" min="0" max="400" value="0">-<input type="number" id="tfKQCUOSV-l2" min="0" max="400" value="0">-<input type="number" id="tfKQCUOSV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfCUOTV-l1" min="0" max="400" value="0">-<input type="number" id="tfCUOTV-l2" min="0" max="400" value="0">-<input type="number" id="tfCUOTV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfCUODV-l1" min="0" max="400" value="0">-<input type="number" id="tfCUODV-l2" min="0" max="400" value="0">-<input type="number" id="tfCUODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfKQSTVPT-l1" min="0" max="400" value="0">-<input type="number" id="tfKQSTVPT-l2" min="0" max="400" value="0">-<input type="number" id="tfKQSTVPT-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfSTPTOTV-l1" min="0" max="400" value="0">-<input type="number" id="tfSTPTOTV-l2" min="0" max="400" value="0">-<input type="number" id="tfSTPTOTV-l3" min="0" max="400" value="0">
+                </div>
+
+                <div class="level-input">
+                    <input type="number" id="tfSTPTDV-l1" min="0" max="400" value="0">-<input type="number" id="tfSTPTDV-l2" min="0" max="400" value="0">-<input type="number" id="tfSTPTDV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfKQSSSV-l1" min="0" max="400" value="0">-<input type="number" id="tfKQSSSV-l2" min="0" max="400" value="0">-<input type="number" id="tfKQSSSV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfSSOTV-l1" min="0" max="400" value="0">-<input type="number" id="tfSSOTV-l2" min="0" max="400" value="0">-<input type="number" id="tfSSOTV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfSSODV-l1" min="0" max="400" value="0">-<input type="number" id="tfSSODV-l2" min="0" max="400" value="0">-<input type="number" id="tfSSODV-l3" min="0" max="400" value="0">
+                </div>
+                <div class="level-input">
+                    <input type="number" id="tfMQHCQT-l1" min="0" max="400" value="0">-<input type="number" id="tfMQHCQT-l2" min="0" max="400" value="0">-<input type="number" id="tfMQHCQT-l3" min="0" max="400" value="0">
+                </div>
+            </div>
+
+            <div class="question-type">
+                <h6>SA - 6 câu (5%NB; 5%TH; 5%VD; HSG)</h6>
+
+                <div class="level-input">
+                    <input type="number" id="saKQTDCCHNL-l1" min="0" max="400" value="0">-<input type="number" id="saKQTDCCHNL-l2" min="0" max="400" value="0">-<input type="number" id="saKQTDCCHNL-l3" min="0" max="400" value="0">-<input type="number" id="saKQTDCCHNL-l4" min="0" max="400" value="0"> → 1. KQ TĐC và CHNL
+                </div>
+                <div class="level-input">
+                    <input type="number" id="saTDNVK-l1" min="0" max="400" value="0">-<input type="number" id="saTDNVK-l2" min="0" max="400" value="0">-<input type="number" id="saTDNVK-l3" min="0" max="400" value="0">-<input type="number" id="saTDNVK-l4" min="0" max="400" value="0"> → 2-3. TĐN và khoáng ở TV
+                </div>
+                <div class="level-input">
+                    <input type="number" id="saQHOTV-l1" min="0" max="400" value="0">-<input type="number" id="saQHOTV-l2" min="0" max="400" value="0">-<input type="number" id="saQHOTV-l3" min="0" max="400" value="0">-<input type="number" id="saQHOTV-l4" min="0" max="400" value="0"> → 4-5. Quang hợp ở TV
+                </div>
+                <div class="level-input">
+                    <input type="number" id="saHHOTV-l1" min="0" max="400" value="0">-<input type="number" id="saHHOTV-l2" min="0" max="400" value="0">-<input type="number" id="saHHOTV-l3" min="0" max="400" value="0">-<input type="number" id="saHHOTV-l4" min="0" max="400" value="0"> → 6-7. Hô hấp ở TV
+                </div>
+                <div class="level-input">
+                    <input type="number" id="saDDVTHDV-l1" min="0" max="400" value="0">-<input type="number" id="saDDVTHDV-l2" min="0" max="400" value="0">-<input type="number" id="saDDVTHDV-l3" min="0" max="400" value="0">-<input type="number" id="saDDVTHDV-l4" min="0" max="400" value="0"> → 8. DD và tiêu hóa ở ĐV
+                </div>
+                <div class="level-input">
+                    <input type="number" id="saHHODV-l1" min="0" max="400" value="0">-<input type="number" id="saHHODV-l2" min="0" max="400" value="0">-<input type="number" id="saHHODV-l3" min="0" max="400" value="0">-<input type="number" id="saHHODV-l4" min="0" max="400" value="0"> → 9. Hô hấp ở ĐV
+                </div>
+                <div class="level-input">
+                    <input type="number" id="saTHODV-l1" min="0" max="400" value="0">-<input type="number" id="saTHODV-l2" min="0" max="400" value="0">-<input type="number" id="saTHODV-l3" min="0" max="400" value="0">-<input type="number" id="saTHODV-l4" min="0" max="400" value="0"> → 10-11. Tuần hoàn ở ĐV
+                </div>
+                <div class="level-input">
+                    <input type="number" id="saMDONDV-l1" min="0" max="400" value="0">-<input type="number" id="saMDONDV-l2" min="0" max="400" value="0">-<input type="number" id="saMDONDV-l3" min="0" max="400" value="0">-<input type="number" id="saMDONDV-l4" min="0" max="400" value="0"> → 12. Miễn dịch ở người và ĐV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saBTVCBNM-l1" min="0" max="400" value="0">-<input type="number" id="saBTVCBNM-l2" min="0" max="400" value="0">-<input type="number" id="saBTVCBNM-l3" min="0" max="400" value="0">-<input type="number" id="saBTVCBNM-l4" min="0" max="400" value="0"> → 13. Bài tiết và CBNM
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saKQCUOSV-l1" min="0" max="400" value="0">-<input type="number" id="saKQCUOSV-l2" min="0" max="400" value="0">-<input type="number" id="saKQCUOSV-l3" min="0" max="400" value="0">-<input type="number" id="saKQCUOSV-l4" min="0" max="400" value="0"> → 14. KQ cảm ứng ở SV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saCUOTV-l1" min="0" max="400" value="0">-<input type="number" id="saCUOTV-l2" min="0" max="400" value="0">-<input type="number" id="saCUOTV-l3" min="0" max="400" value="0">-<input type="number" id="saCUOTV-l4" min="0" max="400" value="0"> → 15-16. Cảm ứng ở TV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saCUODV-l1" min="0" max="400" value="0">-<input type="number" id="saCUODV-l2" min="0" max="400" value="0">-<input type="number" id="saCUODV-l3" min="0" max="400" value="0">-<input type="number" id="saCUODV-l4" min="0" max="400" value="0"> → 17-18. Cảm ứng ở ĐV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saKQSTVPT-l1" min="0" max="400" value="0">-<input type="number" id="saKQSTVPT-l2" min="0" max="400" value="0">-<input type="number" id="saKQSTVPT-l3" min="0" max="400" value="0">-<input type="number" id="saKQSTVPT-l4" min="0" max="400" value="0"> → 19. KQ về ST và PT ở SV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saSTPTOTV-l1" min="0" max="400" value="0">-<input type="number" id="saSTPTOTV-l2" min="0" max="400" value="0">-<input type="number" id="saSTPTOTV-l3" min="0" max="400" value="0">-<input type="number" id="saSTPTOTV-l4" min="0" max="400" value="0"> → 20-21. ST và PT ở TV
+                </div>
+
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saSTPTDV-l1" min="0" max="400" value="0">-<input type="number" id="saSTPTDV-l2" min="0" max="400" value="0">-<input type="number" id="saSTPTDV-l3" min="0" max="400" value="0">-<input type="number" id="saSTPTDV-l4" min="0" max="400" value="0"> → 22-23. ST và PT ở ĐV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saKQSSSV-l1" min="0" max="400" value="0">-<input type="number" id="saKQSSSV-l2" min="0" max="400" value="0">-<input type="number" id="saKQSSSV-l3" min="0" max="400" value="0">-<input type="number" id="saKQSSSV-l4" min="0" max="400" value="0"> → 24. KQ về sinh sản ở SV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saSSOTV-l1" min="0" max="400" value="0">-<input type="number" id="saSSOTV-l2" min="0" max="400" value="0">-<input type="number" id="saSSOTV-l3" min="0" max="400" value="0">-<input type="number" id="saSSOTV-l4" min="0" max="400" value="0"> → 25-26. Sinh sản ở TV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saSSODV-l1" min="0" max="400" value="0">-<input type="number" id="saSSODV-l2" min="0" max="400" value="0">-<input type="number" id="saSSODV-l3" min="0" max="400" value="0">-<input type="number" id="saSSODV-l4" min="0" max="400" value="0"> → 27. Sinh sản ở ĐV
+                </div>
+                <div style="text-align:justify" class="level-input">
+                    <input type="number" id="saMQHCQT-l1" min="0" max="400" value="0">-<input type="number" id="saMQHCQT-l2" min="0" max="400" value="0">-<input type="number" id="saMQHCQT-l3" min="0" max="400" value="0">-<input type="number" id="saMQHCQT-l4" min="0" max="400" value="0"> → 28. MQH các QT sinh lí
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="total">Tổng số câu hỏi: <span id="total-questions">0</span></div>
+
+    <div class="error" id="error-message"></div>
+
+    <div class="buttons">
+        <button onclick="generateExam()">Tạo đề kiểm tra</button>
+        <button onclick="exportToWord()">Xuất file Word</button>
+    </div>
+
+    <div class="exam" id="exam-content"></div>
+    <div class="answers" id="answers-content"></div>
+
+
+    <script src="./NGÂN HÀNG CÂU HỎI_files/nganhangdesinh11.js"></script>
+
+
+
+</body></html>
