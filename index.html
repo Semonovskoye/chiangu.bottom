@@ -6,74 +6,74 @@
   <title>chiangu</title>
   <link rel="icon" type="image/x-icon" href="./images/mambo.png">
   <link rel="stylesheet" href="./styles.css">
-<div class="header">
-  <head>
-    <img src="./images/mambo.png" height=100 width=100>
-    <h1>chiangu - nh**7r1's evil twin :3</h1>
-  </head>
-</div>
-<section>
-<body>
-<h2>Default command string (just copy and paste this into the console)</h2>
-const section1 = document.getElementById('videoSection');
-const section2 = document.getElementById('selectionSection');
-if (section1 && section2) {
-  section1.classList.remove('active');
-  section2.classList.add('active');
-}
-['contextmenu','keydown','selectstart','copy'].forEach(ev => {
-  document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
-});
-const all = {};
-for (const type of Object.keys(encryptedQuestionBank)) {
-  all[type] = {};
-  for (const diff of Object.keys(encryptedQuestionBank[type])) {
-    all[type][diff] = getQuestions(type, diff);
-  }
-}
-console.log(all);
-<br></br>
-<h2>Detailed commands</h2>
-<h3>Decrpting answers</h3>
-const all = {};
-for (const type of Object.keys(encryptedQuestionBank)) {
-  all[type] = {};
-  for (const diff of Object.keys(encryptedQuestionBank[type])) {
-    all[type][diff] = getQuestions(type, diff);
-  }
-}
-console.log(all);
 
-<h3>Enable shortcuts</h3>
-['contextmenu','keydown','selectstart','copy'].forEach(ev => {
-  document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
-});
+  <div class="header">
+    <head>
+      <img src="./images/mambo.png" height=100 width=100>
+      <h1>chiangu - nh**7r1's evil twin :3</h1>
+    </head>
+  </div>
+  <body>
+    <section>
+      <h2>Commands</h2>
+      <h3>Default command string (just copy and paste this into the console)</h3>
+      const section1 = document.getElementById('videoSection');
+      const section2 = document.getElementById('selectionSection');
+      if (section1 && section2) {
+        section1.classList.remove('active');
+        section2.classList.add('active');
+      }
+      ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
+        document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
+      });
+      const all = {};
+      for (const type of Object.keys(encryptedQuestionBank)) {
+        all[type] = {};
+        for (const diff of Object.keys(encryptedQuestionBank[type])) {
+          all[type][diff] = getQuestions(type, diff);
+        }
+      }
+      console.log(all);
+      <br></br>
+      <h3>Detailed commands</h3>
+      <h4>Decrpting answers</h4>
+      const all = {};
+      for (const type of Object.keys(encryptedQuestionBank)) {
+        all[type] = {};
+        for (const diff of Object.keys(encryptedQuestionBank[type])) {
+          all[type][diff] = getQuestions(type, diff);
+        }
+      }
+      console.log(all);
+      <h4>Enable shortcuts</h4>
+      ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
+        document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
+      });
 
-<h3>Full 100% For assignment command (Broken, don't use this.)</h3>
-state.stats.total = state.stats.correct = 30
+      <h4>Full 100% For assignment command (Broken, don't use this.)</h4>
+      state.stats.total = state.stats.correct = 30
 
-<h3>Skip video</h3>
-const section1 = document.getElementById('videoSection');
-const section2 = document.getElementById('selectionSection');
-if (section1 && section2) {
-  section1.classList.remove('active');
-  section2.classList.add('active');
-</section>
-<footer>
-<h2>Why am I doing this?</h2>
-To simply put it, I think the teaching methods used in a certain website is not effective. That is why I documented hacks to remove any utter nonsense from this website.
-<br></br>
-<a href="questionbank10.html">The Question Bank (G10)</a>
-    <br></br>
-<a href="questionbank11.html">The Question Bank (G11)</a>
-    <br></br>
-<a href="questionbank12.html">The Question Bank (G12)</a>
-    <br></br>
-<a href="Công cụ mã hóa Question Bank (BT).html">(Un)Decrypt Code (HW)</a>
-    <br></br>
-<a href="Công cụ mã hóa Question Bank.html">(Un)Decrypt Code (Tests)</a>
-    <br></br>
-<a href="Giấy Chứng Nhận - Cuộc Thi Sáng Tác Bài Hát.html">Print a fun song certificate :3</a>
+      <h4>Skip video</h4>
+      const section1 = document.getElementById('videoSection');
+      const section2 = document.getElementById('selectionSection');
+      if (section1 && section2) {
+        section1.classList.remove('active');
+        section2.classList.add('active');
+    </section>
+
+    <footer>
+      <h2>Links</h2>
+      <a href="questionbank10.html" class="button">The Question Bank (G10)</a>
+      <a href="questionbank11.html" class="button">The Question Bank (G11)</a>
+      <a href="questionbank12.html" class="button">The Question Bank (G12)</a>
+      <a href="Công cụ mã hóa Question Bank (BT).html" class="button">(Un)Decrypt Code (HW)</a>
+      <a href="Công cụ mã hóa Question Bank.html" class="button">(Un)Decrypt Code (Tests)</a>
+      <a href="Giấy Chứng Nhận - Cuộc Thi Sáng Tác Bài Hát.html" class="button">Print a fun song certificate :3</a>
+    </footer>
+
+    <footer>
+      <h2>Why am I doing this?</h2>
+      <p>To simply put it, I think the teaching methods used in a certain website is not effective. That is why I documented hacks to remove any utter nonsense from this website.</p>
+    </footer>
   </body>
 </html>
-</footer>
