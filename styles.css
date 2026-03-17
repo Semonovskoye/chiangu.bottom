@@ -1,21 +1,21 @@
 /* style.css */
 @font-face {
     font-family: Comfortaa-Regular;
-    src: url(./font/comfortaa/Comfortaa-Regular.ttf);
+    src: url(/font/comfortaa/Comfortaa-Regular.ttf);
 }
   
 @font-face {
     font-family: Comfortaa-Bold;
-    src: url(./font/comfortaa/Comfortaa-Bold.ttf);
+    src: url(/font/comfortaa/Comfortaa-Bold.ttf);
 }
 
 @font-face {
     font-family: Comfortaa-Light;
-    src: url(./font/comfortaa/Comfortaa-Light.ttf);
+    src: url(/font/comfortaa/Comfortaa-Light.ttf);
 }
 
 body {
-    background-image: url(./images/bg.jpg);
+    background-image: url(/images/bg.jpg);
 }
 
 .header {
