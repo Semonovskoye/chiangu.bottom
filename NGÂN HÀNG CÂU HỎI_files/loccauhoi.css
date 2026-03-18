@@ -20,6 +20,19 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.button {
+            background-color: rgba(0, 187, 255, 1);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+}
+
 .controls {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
