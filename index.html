@@ -11,7 +11,7 @@
   <div class="header">
     <head>
       <img src="./images/mambo.png" height=100 width=100>
-      <h1>chiangu - nh**7r1's evil twin :3</h1>
+      <h1>chiangu - nh**7r1's angelic twin :3</h1>
     </head>
   </div>
   <body>
@@ -19,8 +19,8 @@
       <center><h2>Các câu lệnh</h2></center>
       <h3>Lệnh tổng hợp (Cứ Copy + Paste cái này vào console là ngon ;3)</h3>
 <div class="code-box">
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre><code>
+  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <pre><code>
 // Section 1
 const section1 = document.getElementById('videoSection');
 
@@ -42,7 +42,7 @@ for (const type of Object.keys(encryptedQuestionBank)) {
   }
 }
 console.log(all);
-</pre></code>
+  </code></pre>
 </div>
       
       <br></br>
@@ -50,8 +50,8 @@ console.log(all);
       <h3>Các câu lệnh chi tiết</h3>
       <h4>- Giải mã hoá đáp án:</h4>
 <div class="code-box">
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre><code>
+  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <pre><code>
 const all = {};
 for (const type of Object.keys(encryptedQuestionBank)) {
   all[type] = {};
@@ -59,32 +59,29 @@ for (const type of Object.keys(encryptedQuestionBank)) {
     all[type][diff] = getQuestions(type, diff);
   }
 }
-console.log(all);
-</pre></code>
+  </code></pre>
 </div>
 
       <h4>- Cho phép sử dụng phím tắt (Như F12,...):</h4>
-<div class="code-box">     
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre><code>
+<div class="code-box">
+  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <pre><code>
 ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
   document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
 });
-</pre></code>
+  </code></pre>
 </div>
 
       <h4>- Full điểm (Cái này không cho điểm chi tiết các phần đâu, đừng dùng.):</h4>
-<div class="code-box"> 
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre><code>
-state.stats.total = state.stats.correct = 30
-</pre></code>
+<div class="code-box">
+  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <pre><code>state.stats.total = state.stats.correct = 30</code></pre>
 </div>
 
       <h4>- Bỏ qua video:</h4>
-<div class="code-container">
-<button class="copy-box" onclick="copyCode(this)">Copy</button>
-<pre><code>
+<div class="code-box">
+  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <pre><code>
 // Section 1 (đang active)
 const section1 = document.getElementById('videoSection');
 
@@ -95,7 +92,7 @@ if (section1 && section2) {
   section1.classList.remove('active');
   section2.classList.add('active');
 }
-</pre></code>
+  </code></pre>
 </div>
 
     <footer>
@@ -109,7 +106,8 @@ if (section1 && section2) {
     </footer>
 
     <footer>
-      <h2>created with hate from andrei.</h2>
+      <img src="./images/matikanetannhauser-mambo.gif">
+      <h2>created with much hate from андрей.</h2>
     </footer>
   </body>
 </html>
