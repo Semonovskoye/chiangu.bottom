@@ -77,39 +77,65 @@ footer {
 }
 
 .button {
-  background-color: rgba(0, 187, 255, 1);
+    background-color: rgba(0, 187, 255, 1);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.code-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.50);
+  color: #000000;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px; 
+  z-index: 10; 
+  background: rgba(0, 187, 255, 1);
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 4px;
+  position: sticky;
+  top: 8px;
+  float: right;
+  transition: 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgb(0, 162, 220);
+}
+
+.copy-btn:active {
+  background: rgb(0, 130, 177);
+  transform: scale(0.95);
+}
+
+.button:hover {
+  background: rgb(0, 162, 220);
+}
+
+.button:active {
+  background: rgb(0, 130, 177);
+  transform: scale(0.95);
 }
 
 pre {
-  position: relative;
-  background: rgba(255, 255, 255, 0.50);
-  padding: 10px;
-  font-size: 15px;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  color: black;
+  margin: 0;
 }
 
-.copy-button {
-  position: absolute;
-  top: 2px;
-  right: 10px;
-  cursor: pointer;
-  color: #fff;
-  background: gray;
-  border-radius: 0.5em;
-  padding: 2px 7px;
-}
-
-.copy-button:hover {
-  color: #000;
-}
