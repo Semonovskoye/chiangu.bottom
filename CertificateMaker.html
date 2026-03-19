@@ -34,18 +34,32 @@
         }
 
         .button {
-               background-color: rgba(0, 187, 255, 1);
-               border: none;
-               color: white;
-               padding: 12px 24px;
-               text-align: center;
-               text-decoration: none;
-               display: inline-block;
-               font-size: 16px;
-               margin: 4px 2px;
-               cursor: pointer;
-               border-radius: 8px;
-               box-sizing: border-box;
+            background-color: rgba(0, 187, 255, 1);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 6px 0 14px 0;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+        }
+
+        /* Hover + click effect */
+        .button:hover {
+            background-color: rgba(0, 160, 220, 1);
+            transform: translateY(-1px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+            background-color: rgba(0, 140, 200, 1);
         }
 
         .certificate {
@@ -417,7 +431,7 @@
     </style>
 </head>
 <body class="bg-gray-200 py-8">
-    <a href="index.html" class="button">Back</a>
+    <a href="index.html" class="button">← Quay lại</a>
     <!-- Form nhập liệu -->
     <div class="no-print max-w-4xl mx-auto mb-8 bg-white rounded-lg shadow-lg p-6">
         <h2 class="text-2xl font-bold text-gray-800 mb-6">⭐ Quản lí giải thưởng</h2>
