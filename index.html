@@ -76,14 +76,6 @@ for (const type of Object.keys(encryptedQuestionBank)) {
 </code></pre>
 </div>
 
-
-      <h4>- Full điểm (Cái này không cho điểm chi tiết các phần đâu, đừng dùng.):</h4>
-
-<div class="code-box">
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre><code>state.stats.total = state.stats.correct = 30</code></pre>
-</div>
-
       <h4>- Bỏ qua video:</h4>
 
 <div class="code-box">
@@ -101,6 +93,28 @@ if (section1 && section2) {
 }
 </code></pre>
 </div>
+
+    
+      <h4>- Full điểm (Cái này không cho điểm chi tiết các phần đâu, đừng dùng.):</h4>
+
+<div class="code-box">
+<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre><code>state.stats.total = state.stats.correct = 30</code></pre>
+</div>
+
+    
+      <h4>- Full bộ câu hỏi EZ (hoá ngu thật đấy, đừng dùng.):</h4>
+
+<div class="code-box">
+<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre><code>
+adjustDifficulty = function(type, isCorrect) {
+    const typeData = state.questionsPerType[type];
+    typeData.difficulty = 'easy';
+};
+</code></pre>
+</div>
+
   </div>
   <div>
     <div class="buttons">
