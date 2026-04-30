@@ -27,12 +27,9 @@
     <div class="code-box">
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
     <pre><code>
-    const section1 = document.getElementById('videoSection');
-    const section2 = document.getElementById('selectionSection');
-    if (section1 && section2) {
-      section1.classList.remove('active');
-      section2.classList.add('active');
-    }
+    state.videoWatched = 100;
+    showSection('selectionSection');
+    updateProgress(35);
     ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
       document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
     });
@@ -79,115 +76,113 @@
     <div class="code-box">
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
     <pre><code>
-    const section1 = document.getElementById('videoSection');
-    const section2 = document.getElementById('selectionSection');
-    if (section1 && section2) {
-      section1.classList.remove('active');
-      section2.classList.add('active');
-    }
+    state.videoWatched = 100;
+    showSection('selectionSection');
+    updateProgress(35);
     </code></pre>
     </div>
 
-          <h4>- Phá Anti-Cheat (Cho các bài dạng mới (Bài 20-). Lưu ý: Phải dùng sau khi bật video, vẫn không thể thoát bài khi làm) - big thanks to <a href="https://github.com/mcfonalds2057" class="a">mcfonalds2057</a> for this hack</h4>
-    <div class="code-box">
+          <h4>- Phá Anti-Cheat (Cho các bài dạng mới (~ Bài 20-) - big thanks to <a href="https://github.com/mcfonalds2057" class="a">mcfonalds2057</a> for this hack</h4>
+          <h4>Lưu ý: Phải dùng sau khi bật video, sau khi dùng phải skip luôn video, vẫn không thể thoát bài khi làm!!)</h4>
+    <div class="code-box collapsible">
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
     <pre><code>
-(() => {
-  console.clear();
-  console.log("🚀 Đang vô hiệu hóa hệ thống cảnh báo / khóa bài...");
+    (() => {
+      console.clear();
+      console.log("🚀 Đang vô hiệu hóa hệ thống cảnh báo / khóa bài...");
 
-  /* =========================
-     1. TẮT HÀM CẢNH BÁO
-  ========================= */
-  window.showSecurityWarning = () => {};
-  window.hideSecurityWarning = () => {};
-  window.closeSecurityWarning = () => {};
+      /* =========================
+        1. TẮT HÀM CẢNH BÁO
+      ========================= */
+      window.showSecurityWarning = () => {};
+      window.hideSecurityWarning = () => {};
+      window.closeSecurityWarning = () => {};
 
-  /* =========================
-     2. TẮT KHÓA BÀI THI
-  ========================= */
-  window.isExamLocked = () => false;
+      /* =========================
+        2. TẮT KHÓA BÀI THI
+      ========================= */
+      window.isExamLocked = () => false;
 
-  /* =========================
-     3. RESET BIẾN VI PHẠM
-  ========================= */
-  window.tabSwitchCount = 0;
-  window.devtoolsOpen = false;
+      /* =========================
+        3. RESET BIẾN VI PHẠM
+      ========================= */
+      window.tabSwitchCount = 0;
+      window.devtoolsOpen = false;
 
-  if (window.state) {
-    window.state.isQuizActive = true;
-  }
+      if (window.state) {
+        window.state.isQuizActive = true;
+      }
 
-  /* =========================
-     4. ẨN OVERLAY CẢNH BÁO
-  ========================= */
-  const overlay = document.getElementById("securityOverlay");
-  if (overlay) {
-    overlay.style.display = "none";
-    overlay.remove?.();
-  }
+      /* =========================
+        4. ẨN OVERLAY CẢNH BÁO
+      ========================= */
+      const overlay = document.getElementById("securityOverlay");
+      if (overlay) {
+        overlay.style.display = "none";
+        overlay.remove?.();
+      }
 
-  const msg = document.getElementById("securityMsg");
-  if (msg) msg.textContent = "";
+      const msg = document.getElementById("securityMsg");
+      if (msg) msg.textContent = "";
 
-  const count = document.getElementById("securityCount");
-  if (count) count.textContent = "";
+      const count = document.getElementById("securityCount");
+      if (count) count.textContent = "";
 
-  const btn = document.getElementById("securityConfirmBtn");
-  if (btn) btn.style.display = "block";
+      const btn = document.getElementById("securityConfirmBtn");
+      if (btn) btn.style.display = "block";
 
-  /* =========================
-     5. GỠ EVENT CHẶN
-  ========================= */
-  const newDoc = document.documentElement.cloneNode(true);
-  document.replaceChild(newDoc, document.documentElement);
+      /* =========================
+        5. GỠ EVENT CHẶN
+      ========================= */
+      const newDoc = document.documentElement.cloneNode(true);
+      document.replaceChild(newDoc, document.documentElement);
 
-  /* =========================
-     6. KHÔI PHỤC COPY / CHỌN TEXT / CHUỘT PHẢI
-  ========================= */
-  const style = document.createElement("style");
-  style.innerHTML = `
-    *{
-      user-select:auto !important;
-      -webkit-user-select:auto !important;
-      -moz-user-select:auto !important;
-      -ms-user-select:auto !important;
-      pointer-events:auto !important;
-    }
-    body{
-      overflow:auto !important;
-    }
-  `;
-  document.head.appendChild(style);
+      /* =========================
+        6. KHÔI PHỤC COPY / CHỌN TEXT / CHUỘT PHẢI
+      ========================= */
+      const style = document.createElement("style");
+      style.innerHTML = `
+        *{
+          user-select:auto !important;
+          -webkit-user-select:auto !important;
+          -moz-user-select:auto !important;
+          -ms-user-select:auto !important;
+          pointer-events:auto !important;
+        }
+        body{
+          overflow:auto !important;
+        }
+      `;
+      document.head.appendChild(style);
 
-  document.oncontextmenu = null;
-  document.onkeydown = null;
-  document.onkeyup = null;
-  document.oncopy = null;
-  document.oncut = null;
-  document.onpaste = null;
-  document.onselectstart = null;
-  document.onvisibilitychange = null;
-  window.onblur = null;
-  window.onfocus = null;
+      document.oncontextmenu = null;
+      document.onkeydown = null;
+      document.onkeyup = null;
+      document.oncopy = null;
+      document.oncut = null;
+      document.onpaste = null;
+      document.onselectstart = null;
+      document.onvisibilitychange = null;
+      window.onblur = null;
+      window.onfocus = null;
 
-  /* =========================
-     7. DỪNG TIMER / INTERVAL
-  ========================= */
-  for (let i = 1; i < 10000; i++) {
-    clearInterval(i);
-    clearTimeout(i);
-  }
+      /* =========================
+        7. DỪNG TIMER / INTERVAL
+      ========================= */
+      for (let i = 1; i < 10000; i++) {
+        clearInterval(i);
+        clearTimeout(i);
+      }
 
-  /* =========================
-     8. CHẶN ALERT / CONFIRM
-  ========================= */
-  window.alert = () => {};
-  window.confirm = () => true;
-  window.prompt = () => null;
+      /* =========================
+        8. CHẶN ALERT / CONFIRM
+      ========================= */
+      window.alert = () => {};
+      window.confirm = () => true;
+      window.prompt = () => null;
 
-  console.log("✅ Đã tắt toàn bộ thông báo + hệ thống khóa bài + anti-cheat.");
-})();
+      console.log("✅ Đã tắt toàn bộ thông báo + hệ thống khóa bài + anti-cheat.");
+    })();
     </code></pre>
     </div>
 
