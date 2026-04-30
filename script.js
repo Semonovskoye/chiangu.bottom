@@ -108,3 +108,42 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   setupDisplayMoreButtons();
 });
+
+function toggleTutorial(button) {
+  const card = button.closest(".tutorial-card");
+  const body = card.querySelector(".tutorial-body");
+
+  if (!body) return;
+
+  const isOpening = !body.classList.contains("open");
+
+  if (isOpening) {
+    body.classList.add("open");
+    button.innerText = "Hide video tutorial";
+
+    const iframe = card.querySelector("iframe[data-src]");
+
+    if (iframe && !iframe.src) {
+      iframe.src = iframe.dataset.src;
+    }
+  } else {
+    body.classList.remove("open");
+    button.innerText = "Display video tutorial";
+
+    const iframe = card.querySelector("iframe");
+    const video = card.querySelector("video");
+
+    if (iframe) {
+      iframe.src = "";
+    }
+
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+
+  setTimeout(() => {
+    window.dispatchEvent(new Event("resize"));
+  }, 50);
+}
