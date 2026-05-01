@@ -20,397 +20,440 @@
         </head>
       </div>
       <div>
-      <section>
-        <center><h2>Các câu lệnh</h2></center>
-        <h3>Lệnh tổng hợp (Chỉ cho các bài dạng cũ!!)</h3>
 
-    <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>
-    state.videoWatched = 100;
-    showSection('selectionSection');
-    updateProgress(35);
-    ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
-      document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
-    });
-    const all = {};
-    for (const type of Object.keys(encryptedQuestionBank)) {
-      all[type] = {};
-      for (const diff of Object.keys(encryptedQuestionBank[type])) {
-        all[type][diff] = getQuestions(type, diff);
-      }
-    }
-    console.log(all);
-    </code></pre>
-    </div>
+<section class="grade-section">
+  <h2>Các câu lệnh</h2>
 
-<div class="tutorial-card">
-  <div class="tutorial-button-row">
-    <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
-      Display video tutorial
+  <div class="grade-tabs">
+    <button class="grade-tab active" type="button" onclick="showGrade('g10', this)">
+      G10
+    </button>
+
+    <button class="grade-tab" type="button" onclick="showGrade('g11', this)">
+      G11
+    </button>
+
+    <button class="grade-tab" type="button" onclick="showGrade('g12', this)">
+      G12
     </button>
   </div>
 
-  <div class="tutorial-body">
-    <div class="video-frame">
-      <video controls preload="metadata" playsinline>
-        <source src="./videos/combo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
+  <div class="grade-content active" data-grade="g10">
+    <!-- Put all your current G10 content here -->
+      <h3>Lệnh tổng hợp (Chỉ cho các bài dạng cũ!!)</h3>
 
-          <h3>Các câu lệnh chi tiết</h3>
-          <h4>- Giải mã hoá đáp án:</h4>
-
-    <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>
-    const all = {};
-    for (const type of Object.keys(encryptedQuestionBank)) {
-      all[type] = {};
-      for (const diff of Object.keys(encryptedQuestionBank[type])) {
-        all[type][diff] = getQuestions(type, diff);
-      }
-    }
-    </code></pre>
-    </div>
-
-    <div class="tutorial-card">
-  <div class="tutorial-button-row">
-    <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
-      Display video tutorial
-    </button>
-  </div>
-
-  <div class="tutorial-body">
-    <div class="video-frame">
-      <video controls preload="metadata" playsinline>
-        <source src="./videos/unencrypt.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-
-          <h4>- Cho phép sử dụng phím tắt (Như F12,...):</h4>
-
-    <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>
-    ['contextmenu','keydown','selectstart','copy'].forEach(ev => {
-      document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
-    });
-    </code></pre>
-    </div>
-
-    <div class="tutorial-card">
-  <div class="tutorial-button-row">
-    <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
-      Display video tutorial
-    </button>
-  </div>
-
-  <div class="tutorial-body">
-    <div class="video-frame">
-      <video controls preload="metadata" playsinline>
-        <source src="./videos/shortcuts.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-
-          <h4>- Bỏ qua video:</h4>
-
-    <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>
-    state.videoWatched = 100;
-    showSection('selectionSection');
-    updateProgress(35);
-    </code></pre>
-    </div>
-
-<div class="tutorial-card">
-  <div class="tutorial-button-row">
-    <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
-      Display video tutorial
-    </button>
-  </div>
-
-  <div class="tutorial-body">
-    <div class="video-frame">
-      <video controls preload="metadata" playsinline>
-        <source src="./videos/skipvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-    
-          <h4>- Phá Anti-Cheat (Cho các bài dạng mới (~ Bài 20-) - big thanks to <a href="https://github.com/mcfonalds2057" class="a">mcfonalds2057</a> for this hack</h4>
-          <h4>Lưu ý: Phải dùng sau khi bật video, sau khi dùng phải skip luôn video, vẫn không thể thoát bài khi làm!!)</h4>
-    <div class="code-box collapsible">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>
-    (() => {
-      console.clear();
-      console.log("🚀 Đang vô hiệu hóa hệ thống cảnh báo / khóa bài...");
-
-      /* =========================
-        1. TẮT HÀM CẢNH BÁO
-      ========================= */
-      window.showSecurityWarning = () => {};
-      window.hideSecurityWarning = () => {};
-      window.closeSecurityWarning = () => {};
-
-      /* =========================
-        2. TẮT KHÓA BÀI THI
-      ========================= */
-      window.isExamLocked = () => false;
-
-      /* =========================
-        3. RESET BIẾN VI PHẠM
-      ========================= */
-      window.tabSwitchCount = 0;
-      window.devtoolsOpen = false;
-
-      if (window.state) {
-        window.state.isQuizActive = true;
-      }
-
-      /* =========================
-        4. ẨN OVERLAY CẢNH BÁO
-      ========================= */
-      const overlay = document.getElementById("securityOverlay");
-      if (overlay) {
-        overlay.style.display = "none";
-        overlay.remove?.();
-      }
-
-      const msg = document.getElementById("securityMsg");
-      if (msg) msg.textContent = "";
-
-      const count = document.getElementById("securityCount");
-      if (count) count.textContent = "";
-
-      const btn = document.getElementById("securityConfirmBtn");
-      if (btn) btn.style.display = "block";
-
-      /* =========================
-        5. GỠ EVENT CHẶN
-      ========================= */
-      const newDoc = document.documentElement.cloneNode(true);
-      document.replaceChild(newDoc, document.documentElement);
-
-      /* =========================
-        6. KHÔI PHỤC COPY / CHỌN TEXT / CHUỘT PHẢI
-      ========================= */
-      const style = document.createElement("style");
-      style.innerHTML = `
-        *{
-          user-select:auto !important;
-          -webkit-user-select:auto !important;
-          -moz-user-select:auto !important;
-          -ms-user-select:auto !important;
-          pointer-events:auto !important;
-        }
-        body{
-          overflow:auto !important;
-        }
-      `;
-      document.head.appendChild(style);
-
-      document.oncontextmenu = null;
-      document.onkeydown = null;
-      document.onkeyup = null;
-      document.oncopy = null;
-      document.oncut = null;
-      document.onpaste = null;
-      document.onselectstart = null;
-      document.onvisibilitychange = null;
-      window.onblur = null;
-      window.onfocus = null;
-
-      /* =========================
-        7. DỪNG TIMER / INTERVAL
-      ========================= */
-      for (let i = 1; i < 10000; i++) {
-        clearInterval(i);
-        clearTimeout(i);
-      }
-
-      /* =========================
-        8. CHẶN ALERT / CONFIRM
-      ========================= */
-      window.alert = () => {};
-      window.confirm = () => true;
-      window.prompt = () => null;
-
-      console.log("✅ Đã tắt toàn bộ thông báo + hệ thống khóa bài + anti-cheat.");
-    })();
-    </code></pre>
-    </div>
-
- <div class="tutorial-card">
-  <div class="tutorial-button-row">
-    <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
-      Display video tutorial
-    </button>
-  </div>
-
-  <div class="tutorial-body">
-    <div class="video-frame">
-      <video controls preload="metadata" playsinline>
-        <source src="./videos/antianticheat.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-
-          <h3>Các câu lệnh bonus (dangerous code ooooh (•̪ o •̪) )</h3>
-        
-          <h4>- Full bộ câu hỏi EZ (hoá ngu thật đấy, đừng dùng... ;3):</h4>
-
-    <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>
-    adjustDifficulty = function(type, isCorrect) {
-        const typeData = state.questionsPerType[type];
-        typeData.difficulty = 'easy';
-    };
-    </code></pre>
-    </div>
-
-<div class="tutorial-card">
-  <div class="tutorial-button-row">
-    <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
-      Display video tutorial
-    </button>
-  </div>
-
-  <div class="tutorial-body">
-    <div class="video-frame">
-      <video controls preload="metadata" playsinline>
-        <source src="./videos/easygame.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-
-          <h4>- Full điểm - big thanks to <a href="https://github.com/kohanut7510" class="a">kohanut7510</a> and <a href="https://github.com/mcfonalds2057" class="a">mcfonalds2057</a> for this hack (lệnh OP nhất chiangu !! (°ㅁ°˶ )):</h4>
-
-    <div class="code-box multi-code-box collapsible">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-      <div class="code-tabs">
-        <button class="code-tab active" type="button" onclick="showCodeTab(this, 'unencrypted')">
-          Bài không bị mã hóa
-        </button>
-
-        <button class="code-tab" type="button" onclick="showCodeTab(this, 'encrypted')">
-          Bài bị mã hoá
-        </button>
+      <div class="code-box">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+state.videoWatched = 100;
+showSection('selectionSection');
+updateProgress(35);
+['contextmenu','keydown','selectstart','copy'].forEach(ev => {
+  document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
+});
+const all = {};
+for (const type of Object.keys(encryptedQuestionBank)) {
+  all[type] = {};
+  for (const diff of Object.keys(encryptedQuestionBank[type])) {
+    all[type][diff] = getQuestions(type, diff);
+  }
+}
+console.log(all);
+        </code></pre>
       </div>
 
-      <pre class="code-panel active" data-code-panel="unencrypted">
-        <code data-code-file="./unencrypted.txt">Loading...</code>
-      </pre>
+      <div class="tutorial-card">
+        <div class="tutorial-button-row">
+          <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
+            Display video tutorial
+          </button>
+        </div>
 
-      <pre class="code-panel" data-code-panel="encrypted">
-        <code data-code-file="./encrypted.txt">Loading...</code>
-      </pre>
-    </div>
-
-<div class="tutorial-card">
-  <div class="tutorial-button-row">
-    <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
-      Display video tutorial
-    </button>
-  </div>
-
-  <div class="tutorial-body">
-    <div class="video-frame">
-      <video controls preload="metadata" playsinline>
-        <source src="./videos/nuke.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-
-      </div>
-      <div>
-        <div class="buttons">
-          <h2>Các đường liên kết (Ripped directly off of nh**7r1!!)</h2>
-          <a href="questionbank10.html" class="button">Ngân hàng câu hỏi K10</a>
-          <a href="questionbank11.html" class="button">Ngân hàng câu hỏi K11</a>
-          <a href="questionbank12.html" class="button">Ngân hàng câu hỏi K12</a>
-          <a href="DecryptorHW.html" class="button">Giải/Mã hoá code BTVN</a>
-          <a href="DecryptorTEST.html" class="button">Giải/Mã hoá code BKT</a>
-          <a href="CertificateMaker.html" class="button">In giấy khen sáng tác nhạc</a>
+        <div class="tutorial-body">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="./videos/combo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
-      
-      <div>
-        <footer>
-          <h2>Contributors</h2>
-          <div class="contributors-list">
-            <a class="contributor-card" href="https://github.com/kohanut7510" target="_blank" rel="noopener noreferrer">
-              <img src="https://avatars.githubusercontent.com/u/152503283?v=4" alt="kohanut7510 profile picture">
-              <span>kohanut7510</span>
-            </a>
 
-            <a class="contributor-card" href="https://github.com/mcfonalds2057" target="_blank" rel="noopener noreferrer">
-              <img src="https://avatars.githubusercontent.com/u/191731175?v=4" alt="mcfonalds2057 profile picture">
-              <span>mcfonalds2057</span>
-            </a>
+      <h3>Các câu lệnh chi tiết</h3>
+      <h4>- Giải mã hoá đáp án:</h4>
+
+      <div class="code-box">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+const all = {};
+for (const type of Object.keys(encryptedQuestionBank)) {
+  all[type] = {};
+  for (const diff of Object.keys(encryptedQuestionBank[type])) {
+    all[type][diff] = getQuestions(type, diff);
+  }
+}
+        </code></pre>
+      </div>
+
+      <div class="tutorial-card">
+        <div class="tutorial-button-row">
+          <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
+            Display video tutorial
+          </button>
+        </div>
+
+        <div class="tutorial-body">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="./videos/unencrypt.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-        </footer>
-      </div>
-      
-      <div>
-        <footer>
-          <img src="./images/matikanetannhauser-mambo.gif">
-          <h2>created with much hate from андрей.</h2>
-          <p>let's not multiply our wisdom.</p>
-          <a href="https://dash.domain.digitalplat.org/signup?ref=wGlNhKVIoX" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid #d6dbe7;border-radius:12px;background:#ffffff;color:#0f172a;text-decoration:none;font:500 13px/1.25 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 1px 2px rgba(15,23,42,0.06);"><span style="display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border-radius:9999px;background:#eff6ff;color:#1d4ed8;font:600 11px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:0.02em;text-transform:uppercase;">DigitalPlat</span><span style="display:flex;flex-direction:column;gap:2px;"><span style="font-weight:600;">This Website is Powered by DigitalPlat FreeDomain</span><span style="color:#475569;">Get a free domain from DigitalPlat.</span></span></a>
-          <h5>(check these guys out too, they are also better than nh**tri.)</h5>
-          <h5>(god bless github too.)</h5>
-        </footer>
+        </div>
       </div>
 
-    <script src="./three.r134.min.js"></script>
-    <script src="./vanta.waves.min.js"></script>
-    <script>
-    let vantaEffect;
+      <h4>- Cho phép sử dụng phím tắt (Như F12,...):</h4>
 
-    document.addEventListener("DOMContentLoaded", () => {
-      vantaEffect = VANTA.WAVES({
-        el: "#vanta-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x2b80ff,
-      });
-    });
+      <div class="code-box">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+['contextmenu','keydown','selectstart','copy'].forEach(ev => {
+  document.addEventListener(ev, e => e.stopImmediatePropagation(), true);
+});
+        </code></pre>
+      </div>
 
-    window.addEventListener("resize", () => {
-      if (vantaEffect && typeof vantaEffect.resize === "function") {
-        vantaEffect.resize();
-      }
-    });
-    </script>
+      <div class="tutorial-card">
+        <div class="tutorial-button-row">
+          <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
+            Display video tutorial
+          </button>
+        </div>
+
+        <div class="tutorial-body">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="./videos/shortcuts.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <h4>- Bỏ qua video:</h4>
+
+      <div class="code-box">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+state.videoWatched = 100;
+showSection('selectionSection');
+updateProgress(35);
+        </code></pre>
+      </div>
+
+      <div class="tutorial-card">
+        <div class="tutorial-button-row">
+          <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
+            Display video tutorial
+          </button>
+        </div>
+
+        <div class="tutorial-body">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="./videos/skipvideo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    
+      <h4>- Phá Anti-Cheat (Cho các bài dạng mới (~ Bài 20-) - big thanks to <a href="https://github.com/mcfonalds2057" class="a">mcfonalds2057</a> for this hack</h4>
+      <h4>Lưu ý: Phải dùng sau khi bật video, sau khi dùng phải skip luôn video, vẫn không thể thoát bài khi làm!!)</h4>
+      <div class="code-box collapsible">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          <pre><code>
+(() => {
+  console.clear();
+  console.log("🚀 Đang vô hiệu hóa hệ thống cảnh báo / khóa bài...");
+
+  /* =========================
+    1. TẮT HÀM CẢNH BÁO
+  ========================= */
+  window.showSecurityWarning = () => {};
+  window.hideSecurityWarning = () => {};
+  window.closeSecurityWarning = () => {};
+
+  /* =========================
+    2. TẮT KHÓA BÀI THI
+  ========================= */
+  window.isExamLocked = () => false;
+
+  /* =========================
+    3. RESET BIẾN VI PHẠM
+  ========================= */
+  window.tabSwitchCount = 0;
+  window.devtoolsOpen = false;
+
+  if (window.state) {
+    window.state.isQuizActive = true;
+  }
+
+  /* =========================
+    4. ẨN OVERLAY CẢNH BÁO
+  ========================= */
+  const overlay = document.getElementById("securityOverlay");
+  if (overlay) {
+    overlay.style.display = "none";
+    overlay.remove?.();
+  }
+
+  const msg = document.getElementById("securityMsg");
+  if (msg) msg.textContent = "";
+
+  const count = document.getElementById("securityCount");
+  if (count) count.textContent = "";
+
+  const btn = document.getElementById("securityConfirmBtn");
+  if (btn) btn.style.display = "block";
+
+  /* =========================
+    5. GỠ EVENT CHẶN
+  ========================= */
+  const newDoc = document.documentElement.cloneNode(true);
+  document.replaceChild(newDoc, document.documentElement);
+
+  /* =========================
+    6. KHÔI PHỤC COPY / CHỌN TEXT / CHUỘT PHẢI
+  ========================= */
+  const style = document.createElement("style");
+  style.innerHTML = `
+    *{
+      user-select:auto !important;
+      -webkit-user-select:auto !important;
+      -moz-user-select:auto !important;
+      -ms-user-select:auto !important;
+      pointer-events:auto !important;
+    }
+    body{
+      overflow:auto !important;
+    }
+  `;
+  document.head.appendChild(style);
+
+  document.oncontextmenu = null;
+  document.onkeydown = null;
+  document.onkeyup = null;
+  document.oncopy = null;
+  document.oncut = null;
+  document.onpaste = null;
+  document.onselectstart = null;
+  document.onvisibilitychange = null;
+  window.onblur = null;
+  window.onfocus = null;
+
+  /* =========================
+    7. DỪNG TIMER / INTERVAL
+  ========================= */
+  for (let i = 1; i < 10000; i++) {
+    clearInterval(i);
+    clearTimeout(i);
+  }
+
+  /* =========================
+    8. CHẶN ALERT / CONFIRM
+  ========================= */
+  window.alert = () => {};
+  window.confirm = () => true;
+  window.prompt = () => null;
+
+  console.log("✅ Đã tắt toàn bộ thông báo + hệ thống khóa bài + anti-cheat.");
+})();
+          </code></pre>
+      </div>
+
+      <div class="tutorial-card">
+        <div class="tutorial-button-row">
+          <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
+            Display video tutorial
+          </button>
+        </div>
+
+        <div class="tutorial-body">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="./videos/antianticheat.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <h3>Các câu lệnh bonus (dangerous code ooooh (•̪ o •̪) )</h3>
+      <h4>- Full bộ câu hỏi EZ (hoá ngu thật đấy, đừng dùng... ;3):</h4>
+
+      <div class="code-box">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+adjustDifficulty = function(type, isCorrect) {
+    const typeData = state.questionsPerType[type];
+    typeData.difficulty = 'easy';
+};
+        </code></pre>
+      </div>
+
+      <div class="tutorial-card">
+        <div class="tutorial-button-row">
+          <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
+            Display video tutorial
+          </button>
+        </div>
+
+        <div class="tutorial-body">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="./videos/easygame.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <h4>- Full điểm - big thanks to <a href="https://github.com/kohanut7510" class="a">kohanut7510</a> and <a href="https://github.com/mcfonalds2057" class="a">mcfonalds2057</a> for this hack (lệnh OP nhất chiangu !! (°ㅁ°˶ )):</h4>
+
+      <div class="code-box multi-code-box collapsible">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+        <div class="code-tabs">
+          <button class="code-tab active" type="button" onclick="showCodeTab(this, 'unencrypted')">
+            Bài không bị mã hóa
+          </button>
+
+          <button class="code-tab" type="button" onclick="showCodeTab(this, 'encrypted')">
+            Bài bị mã hoá
+          </button>
+        </div>
+
+        <pre class="code-panel active" data-code-panel="unencrypted">
+          <code data-code-file="./unencrypted.txt">Loading...</code>
+        </pre>
+
+        <pre class="code-panel" data-code-panel="encrypted">
+          <code data-code-file="./encrypted.txt">Loading...</code>
+        </pre>
+      </div>
+
+      <div class="tutorial-card">
+        <div class="tutorial-button-row">
+          <button class="tutorial-toggle" type="button" onclick="toggleTutorial(this)">
+            Display video tutorial
+          </button>
+        </div>
+
+        <div class="tutorial-body">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="./videos/nuke.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
   </div>
+
+  <div class="grade-content" data-grade="g11">
+    <!-- Put your G11 content here -->
+
+    <h3>Lệnh hiện đáp án</h3>
+
+    <div class="code-box">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>
+console.log(biologyTerms)
+console.log(termSentences)
+console.log(alternateSentences)
+      </code></pre>
+    </div>
+  </div>
+
+  <div class="grade-content" data-grade="g12">
+    <!-- Put your G12 content here -->
+
+    <h3>Lệnh tổng hợp G12</h3>
+
+    <div class="code-box">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>
+nothing here yet... (cứ thử dùng mấy lệnh của G10 và G11 đi.)
+      </code></pre>
+    </div>
+  </div>
+</section>
+
+<div>
+  <div class="buttons">
+    <h2>Các đường liên kết (Ripped directly off of nh**7r1!!)</h2>
+    <a href="questionbank10.html" class="button">Ngân hàng câu hỏi K10</a>
+    <a href="questionbank11.html" class="button">Ngân hàng câu hỏi K11</a>
+    <a href="questionbank12.html" class="button">Ngân hàng câu hỏi K12</a>
+    <a href="DecryptorHW.html" class="button">Giải/Mã hoá code BTVN</a>
+    <a href="DecryptorTEST.html" class="button">Giải/Mã hoá code BKT</a>
+    <a href="CertificateMaker.html" class="button">In giấy khen sáng tác nhạc</a>
+  </div>
+</div>
+      
+<div>
+  <footer>
+    <h2>Contributors</h2>
+    <div class="contributors-list">
+      <a class="contributor-card" href="https://github.com/kohanut7510" target="_blank" rel="noopener noreferrer">
+        <img src="https://avatars.githubusercontent.com/u/152503283?v=4" alt="kohanut7510 profile picture">
+        <span>kohanut7510</span>
+      </a>
+
+      <a class="contributor-card" href="https://github.com/mcfonalds2057" target="_blank" rel="noopener noreferrer">
+        <img src="https://avatars.githubusercontent.com/u/191731175?v=4" alt="mcfonalds2057 profile picture">
+        <span>mcfonalds2057</span>
+      </a>
+    </div>
+  </footer>
+</div>
+      
+<div>
+  <footer>
+    <img src="./images/matikanetannhauser-mambo.gif">
+    <h2>created with much hate from андрей.</h2>
+    <p>let's not multiply our wisdom.</p>
+    <a href="https://dash.domain.digitalplat.org/signup?ref=wGlNhKVIoX" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid #d6dbe7;border-radius:12px;background:#ffffff;color:#0f172a;text-decoration:none;font:500 13px/1.25 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 1px 2px rgba(15,23,42,0.06);"><span style="display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border-radius:9999px;background:#eff6ff;color:#1d4ed8;font:600 11px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:0.02em;text-transform:uppercase;">DigitalPlat</span><span style="display:flex;flex-direction:column;gap:2px;"><span style="font-weight:600;">This Website is Powered by DigitalPlat FreeDomain</span><span style="color:#475569;">Get a free domain from DigitalPlat.</span></span></a>
+    <h5>(check these guys out too, they are also better than nh**tri.)</h5>
+    <h5>(god bless github too.)</h5>
+  </footer>
+</div>
+
+<script src="./three.r134.min.js"></script>
+<script src="./vanta.waves.min.js"></script>
+<script>
+let vantaEffect;
+
+document.addEventListener("DOMContentLoaded", () => {
+  vantaEffect = VANTA.WAVES({
+    el: "#vanta-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x2b80ff,
+  });
+});
+
+window.addEventListener("resize", () => {
+  if (vantaEffect && typeof vantaEffect.resize === "function") {
+    vantaEffect.resize();
+  }
+});
+</script>
 </body>
 </html>
-
-
