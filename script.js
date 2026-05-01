@@ -147,3 +147,47 @@ function toggleTutorial(button) {
     window.dispatchEvent(new Event("resize"));
   }, 50);
 }
+
+function showGrade(grade, button) {
+  const section = button.closest(".grade-section");
+
+  if (!section) return;
+
+  section.querySelectorAll(".grade-tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  section.querySelectorAll(".grade-content").forEach(content => {
+    content.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  const selectedContent = section.querySelector(
+    `.grade-content[data-grade="${grade}"]`
+  );
+
+  if (selectedContent) {
+    selectedContent.classList.add("active");
+  }
+
+  localStorage.setItem("selectedGrade", grade);
+
+  setTimeout(() => {
+    window.dispatchEvent(new Event("resize"));
+  }, 50);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedGrade = localStorage.getItem("selectedGrade");
+
+  if (!savedGrade) return;
+
+  const button = document.querySelector(
+    `.grade-tab[onclick*="${savedGrade}"]`
+  );
+
+  if (button) {
+    showGrade(savedGrade, button);
+  }
+});
